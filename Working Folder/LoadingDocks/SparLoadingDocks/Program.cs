@@ -20,20 +20,12 @@ namespace SparLoadingDocks
      //Psot Condition: display a how the loads have been allocated to the bays, in the most effecient manner. 
      [STAThread]
         static void Main(string[] args)
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-
-
-           
-           
-            
+        { 
+            Docks Dock = new Docks();
             int choice;
             do
             {
                 Console.Clear();
-                
                 Console.WriteLine("INDICATE WHICH FUNCTIONALITY YOU WISH TO TEST");
                 Console.WriteLine("1. Display list of Bays");
                 Console.WriteLine("2. Enter Load Information");
@@ -45,42 +37,36 @@ namespace SparLoadingDocks
                 switch (choice)
                 {
                     case 1:
-                      
+                        Dock.DisplayBays();
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
                     case 2:
-                        
                         // At this point we have a list of loads stored in an arraylist. Now its time to allocate the loads
-                        LList = getListOfLoads();
-                        
-
+                        Dock.LoadInformation();
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
                     case 3:
                         //Displays Loads
-                        displayLoads(LList);
-                        totalWeightOfLoads(LList);
+                        Dock.DisplayLoads();
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
                     case 4:
                         // At this point the List of bays is sorted in ascending order
-                       
                         Console.WriteLine("Sorted List of Bays");
-                        
+                        Dock.DisplaySorted();
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
                     case 5:
-                        Docks curDock = new Docks(ListOfBays, LList);
-                        curDock.AllocateLoads(ref ListOfBays, ref LList);
+
+
 
                         //Display with Allocated Bays
-                        
+                        Dock.AllocateTry();
                         Console.WriteLine("Sorted List of Loads");
-                        displayAllocatedLoads(LList);
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
@@ -93,15 +79,14 @@ namespace SparLoadingDocks
                 }
             } while (choice != 9);
             Console.WriteLine("Processing terminated - press enter to continue");
-            Console.ReadLine();           
+            Console.ReadLine();
         }
 
-       
-        
 
-        
-     
-              
+
+
+
+
         //static public void BubbleSortForLoads(ArrayList List)
         //{
         //    Load First, Second;

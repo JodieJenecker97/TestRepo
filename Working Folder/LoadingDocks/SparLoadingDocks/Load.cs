@@ -8,7 +8,7 @@ namespace SparLoadingDocks
 {
     class Load
     {
-        
+
         public double weight;
         public string Name;
         public string Bay;
@@ -18,17 +18,17 @@ namespace SparLoadingDocks
             weight = w;
             Name = N;
             Bay = "";
-         
+
         }
         public void displayLoad()
         {
-            Console.WriteLine("{0} weight is: {1} ",Name,weight );
+            Console.WriteLine("{0} weight is: {1} ", Name, weight);
         }
 
         public void DisplayAllocatedLoad()
         {
 
-            Console.WriteLine("{0} is allocated to the following Bay/s : {1} " , Name , Bay);
+            Console.WriteLine("{0} is allocated to the following Bay/s : {1} ", Name, Bay);
         }
         public void SubTractLoad(double L)
         {
@@ -36,3 +36,4 @@ namespace SparLoadingDocks
         }
     }
 }
+

@@ -13,10 +13,13 @@ namespace SparLoadingDocks
         public BayList()
         {
 
-             ListOfBays = new Bay[60];
-        } 
+            ListOfBays = new Bay[60];
+            PopulateBays();
 
-        public void PopulateBays()
+        }
+
+
+        private void PopulateBays()
         {
             StreamReader Text = new StreamReader("BayArea.txt");
             int i = 0;
@@ -33,33 +36,46 @@ namespace SparLoadingDocks
 
         }
 
-        public void BubbleSortForBays(Bay[] List)
+        private void BubbleSortForBays()
         {
             Console.WriteLine();
             Bay First, Second;
 
-            for (int x = 1; x <= List.Count() - 1; x++)
+            for (int x = 1; x <= ListOfBays.Count() - 1; x++)
             {
-                for (int y = 1; y <= (List.Count() - x); y++)
+                for (int y = 1; y <= (ListOfBays.Count() - x); y++)
                 {
-                    First = (Bay)List[y - 1];
-                    Second = (Bay)List[y];
+                    First = (Bay)ListOfBays[y - 1];
+                    Second = (Bay)ListOfBays[y];
                     if (First.AvailableCapacity.CompareTo(Second.AvailableCapacity) > 0)
                     {
-                        Swap(y, y - 1, List);
+                        Swap(y, y - 1, ListOfBays);
                     }
                 }
             }
         }
 
-        public void Swap(int a, int b, Bay[] List1)
+        private void Swap(int a, int b, Bay[] List1)
         {
             Bay temp = List1[a];
             List1[a] = List1[b];
             List1[b] = temp;
         }
 
-         public void displayBays()
+        public Bay CurrentBay(int i)
+        {
+
+            if (i > 60)
+            {
+                return null;
+            }
+            else
+            {
+                return ListOfBays[i];
+            }
+        }
+
+        public void displayBays()
         {
             if (ListOfBays == null)
             {
@@ -71,6 +87,13 @@ namespace SparLoadingDocks
                 Bay curbay = ListOfBays[i];
                 curbay.displayBay(curbay);
             }
+        }
+
+        public void DisplaySorted()
+        {
+
+            BubbleSortForBays();
+            displayBays();
         }
     }
 

@@ -10,7 +10,7 @@ namespace SparLoadingDocks
     {
         public string Name;
         public double MaxCapacity;
-        public double currentLoad = 0;
+        public double currentLoad;
         public double AvailableCapacity;
         //public string name2;
 
@@ -18,12 +18,12 @@ namespace SparLoadingDocks
         {
             Name = N;
             MaxCapacity = Cap;
-            AvailableCapacity = MaxCapacity - currentLoad;
-            
-    }
+            AvailableCapacity = MaxCapacity;
+            currentLoad = 0;
+        }
         public void displayBay(Bay cur)
         {
-            Console.WriteLine("{0}, MaxCapacity: {1}, AvailableCapacity: {2}",cur.Name,cur.MaxCapacity, AvailableCapacity);
+            Console.WriteLine("{0}, MaxCapacity: {1}, AvailableCapacity: {2}", cur.Name, cur.MaxCapacity, AvailableCapacity);
         }
         public void subtractcapacity(double weight)
         {
@@ -31,3 +31,4 @@ namespace SparLoadingDocks
         }
     }
 }
+

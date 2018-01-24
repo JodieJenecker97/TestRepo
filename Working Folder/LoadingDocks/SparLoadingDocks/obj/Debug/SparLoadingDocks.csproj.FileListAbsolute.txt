@@ -33,3 +33,11 @@ C:\Users\JeneckerD\Desktop\Spar Wrking Folder(2)\Spar Wrking Folder\SparLoadingD
 C:\Users\JeneckerD\Desktop\Spar Wrking Folder(2) Edited\Working Folder\LoadingDocks\SparLoadingDocks\bin\Debug\SparLoadingDocks.exe.config
 C:\Users\JeneckerD\Desktop\Spar Wrking Folder(2) Edited\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.exe
 C:\Users\JeneckerD\Desktop\Spar Wrking Folder(2) Edited\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.pdb
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\bin\Debug\SparLoadingDocks.exe.config
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.exe
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.pdb
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\bin\Debug\SparLoadingDocks.exe
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\bin\Debug\SparLoadingDocks.pdb
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.csprojResolveAssemblyReference.cache
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.Form1.resources
+C:\Users\Clint\Source\Repos\TestRepo\Working Folder\LoadingDocks\SparLoadingDocks\obj\Debug\SparLoadingDocks.csproj.GenerateResource.Cache
