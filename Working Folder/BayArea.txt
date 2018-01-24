@@ -1,0 +1,9 @@
+Bay1,20
+Bay2,20
+Bay3,10
+Bay4,35
+Bay5,50
+Bay6,20
+Bay7,30
+Bay8,10
+Bay9,40
