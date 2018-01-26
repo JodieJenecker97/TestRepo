@@ -178,6 +178,9 @@ namespace SparLoadingDocks
                     if (curBay.AvailableCapacity >= curLoad.weight && (empty == false))
                     {
                         Console.WriteLine("Allocate {0} loads from {1} to Bay {2}", curLoad.weight, curLoad.Name, curBay.Name);
+                        //I added this code () 1 line below
+                        curBay.loadsInBAy.Add(curLoad.Name);
+
                         curBay.subtractcapacity(curLoad.weight);
                         curBay.currentLoad += curLoad.weight;
                         curLoad.SubTractLoad(curLoad.weight);
@@ -197,6 +200,10 @@ namespace SparLoadingDocks
                         if ((curBay.AvailableCapacity > 0) && (curBay.AvailableCapacity < curLoad.weight))              //// If there is space in the Bay and the available capacity is less than weight (Not really split up yet)           
                         {
                             Console.WriteLine("Allocate {0} loads from {1} to Bay {2}", curBay.AvailableCapacity, curLoad.Name, curBay.Name);
+                            //I added this code () 1 line below
+                            curBay.loadsInBAy.Add(curLoad.Name);
+
+
                             curLoad.SubTractLoad(curBay.AvailableCapacity);
                             curBay.subtractcapacity(curBay.AvailableCapacity);
                             curLoad.Bay += " " + curBay.Name;
@@ -204,7 +211,12 @@ namespace SparLoadingDocks
                         }
                         else if (curBay.AvailableCapacity > curLoad.weight)                                             ///Checks if Load is less than Bay (For smaller splits)
                         {
-                            Console.WriteLine("Allocate {0} loads from {1} to Bay {2}", curLoad.weight, curLoad.Name, curBay.Name);
+                            Console.WriteLine("Allocate {0} loads from {1} to Bay {2}", curLoad.weight, curLoad.Name, curBay.Name);                     
+                            //I added this code () 1 line below
+                            curBay.loadsInBAy.Add(curLoad.Name);
+
+
+
                             curBay.subtractcapacity(curLoad.weight);
                             curLoad.SubTractLoad(curLoad.weight);
                             //curBay.currentLoad += curLoad.weight;
@@ -218,15 +230,8 @@ namespace SparLoadingDocks
                 p++;
             }
             ListOfLoads.displayAllocatedLoads();
+
         }
-
-
-
-
-
-
-
-
 
 
         public void displayremainingLoads(ArrayList LoadList, int StartPoint)
@@ -251,8 +256,35 @@ namespace SparLoadingDocks
         }
 
 
-
-
-
+        public Bay[] Test()
+        {
+            ArrayList LList = ListOfLoads.getLL();
+            Bay[] BL = ListOfBays.getBL(); 
+            if (LList == null)
+            {
+                Console.WriteLine("List is empty");
+            }
+            for (int i = 1; i < LList.Count; i++)
+            {
+                Load prevLoad = (Load)LList[0];
+                String prevLoadBayName = prevLoad.Bay; ;
+                for (int g = i; g < LList.Count; g++)
+                {
+                    Load curLoad = ((Load)LList[g]);
+                    if (!(prevLoadBayName).Equals((curLoad).Bay) && (curLoad.Added = false))
+                    {
+                        int h = 0;
+                        while (!(BL[h].Name).Equals(prevLoadBayName))
+                        {
+                            h++;
+                        }
+                        Bay curBay = (Bay)BL[h];
+                        curBay.loadsInBAy.Add(curLoad);
+                        curLoad.Added = true;
+                    }
+                }
+            }
+            return BL;
+        }
     }
 }

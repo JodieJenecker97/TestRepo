@@ -95,6 +95,12 @@ namespace SparLoadingDocks
             BubbleSortForBays();
             displayBays();
         }
-    }
+      
+        public Bay[] getBL()
+        {
+            return ListOfBays;
+        }
+       
 
+    }
 }

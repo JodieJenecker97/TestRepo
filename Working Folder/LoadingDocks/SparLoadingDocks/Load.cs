@@ -12,14 +12,17 @@ namespace SparLoadingDocks
         public double weight;
         public string Name;
         public string Bay;
+        public bool Added;
 
         public Load(double w, string N)
         {
             weight = w;
             Name = N;
             Bay = "";
+            Added = false;
 
         }
+
         public void displayLoad()
         {
             Console.WriteLine("{0} weight is: {1} ", Name, weight);

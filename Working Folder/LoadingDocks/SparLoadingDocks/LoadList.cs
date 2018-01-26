@@ -127,6 +127,11 @@ namespace SparLoadingDocks
             }
 
         }
+        public ArrayList getLL()
+        {
+            return LList;
+        }
 
+       
     }
 }

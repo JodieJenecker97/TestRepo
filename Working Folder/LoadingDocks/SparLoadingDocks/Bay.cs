@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace SparLoadingDocks
 {
@@ -12,6 +13,10 @@ namespace SparLoadingDocks
         public double MaxCapacity;
         public double currentLoad;
         public double AvailableCapacity;
+        public ArrayList loadsInBAy;
+
+
+
         //public string name2;
 
         public Bay(string N, double Cap)
@@ -20,6 +25,7 @@ namespace SparLoadingDocks
             MaxCapacity = Cap;
             AvailableCapacity = MaxCapacity;
             currentLoad = 0;
+            loadsInBAy = new ArrayList();
         }
         public void displayBay(Bay cur)
         {
@@ -28,6 +34,18 @@ namespace SparLoadingDocks
         public void subtractcapacity(double weight)
         {
             this.AvailableCapacity = AvailableCapacity - weight;
+        }
+        public void DisplayLoadsofABay()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Bay {0} contains loads ",Name);
+            ArrayList LIB = loadsInBAy;
+            for (int i = 0; i < LIB.Count; i++)
+            {
+                String LoadName = (String)LIB[i];
+
+                Console.WriteLine("{0} ", LoadName);
+            }
         }
     }
 }

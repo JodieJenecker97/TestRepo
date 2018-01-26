@@ -32,6 +32,7 @@ namespace SparLoadingDocks
                 Console.WriteLine("3. Display Load Information");
                 Console.WriteLine("4. Display sorted List of Bays");
                 Console.WriteLine("5. Allocate and Display the Loads");
+                Console.WriteLine("6. Remove A Load from a bay");
                 Console.WriteLine("9. TERMINATE PROCESSING");
                 choice = int.Parse(Console.ReadLine());
                 switch (choice)
@@ -60,17 +61,27 @@ namespace SparLoadingDocks
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
-                    case 5:
-
-
-
+                    case 5:                   
                         //Display with Allocated Bays
                         Dock.AllocateTry();
                         Console.WriteLine("Sorted List of Loads");
                         Console.WriteLine("Press enter to continue................");
                         Console.ReadLine();
                         break;
-
+                    case 6:
+                        //Removes loads from a bay
+                        Bay[] BL = Dock.Test();
+                        for (int i = 0; i < BL.Count(); i++)
+                        {
+                            Bay curbay = (Bay)BL[i];
+                            if (curbay.loadsInBAy.Count > 0)
+                            {
+                                curbay.DisplayLoadsofABay();
+                            }
+                           
+                        }
+                        Console.ReadLine();
+                        break;
                     case 9: break;
                     default:
                         Console.WriteLine("Incorrect selection - press enter to continue");
