@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace SparLoadingDocks
 {
@@ -99,8 +100,48 @@ namespace SparLoadingDocks
         public Bay[] getBL()
         {
             return ListOfBays;
-        }
-       
+        }   
+        
+        public void RemoveLoad()
+        {
+            
+            for (int i = 0; i < ListOfBays.Count(); i++)
+            {
+                Bay curbay = ListOfBays[i];
+                Console.WriteLine("{0}:  {1}",i+1,curbay.Name);
+            }
+            Console.WriteLine("Select the number of the bay from which you want to remove a load");
+            int Num = int.Parse(Console.ReadLine());
+            Bay CB = ListOfBays[Num - 1];
+
+
+
+
+            Console.WriteLine("");
+            Console.WriteLine("Bay {0} contains loads ", CB.Name);
+            ArrayList LIB = CB.loadsInBAy;
+            if (LIB.Count == 0)
+            {
+                Console.WriteLine("Bay {0} has no loads",CB.Name);
+            }
+            else
+            {
+                for (int i = 0; i < LIB.Count; i++)
+                {
+                    String LoadName = (String)LIB[i];
+
+                    Console.WriteLine("{0}: {1} ", i + 1, LoadName);
+                }
+            }
+            
+            Console.WriteLine("Select a number that corresponds to the load that you want to remove");
+            int NumofLoad = int.Parse(Console.ReadLine());
+            String curLoad = (String)CB.loadsInBAy[NumofLoad - 1];
+            CB.loadsInBAy.RemoveAt(NumofLoad-1);
+            Console.WriteLine("{0} has been sucessfully removed", curLoad);
+            Console.ReadLine();
+
+        }  
 
     }
 }

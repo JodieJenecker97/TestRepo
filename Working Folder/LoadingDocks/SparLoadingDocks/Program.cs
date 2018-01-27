@@ -80,7 +80,10 @@ namespace SparLoadingDocks
                             }
                            
                         }
+                        Console.WriteLine("Press Enter to remove a load");
                         Console.ReadLine();
+                      
+                        Dock.RevoveLoadFromBay();
                         break;
                     case 9: break;
                     default:
@@ -88,7 +91,8 @@ namespace SparLoadingDocks
                         Console.ReadLine();
                         break;
                 }
-            } while (choice != 9);
+            }
+            while (choice != 9);
             Console.WriteLine("Processing terminated - press enter to continue");
             Console.ReadLine();
         }

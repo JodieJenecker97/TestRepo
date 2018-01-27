@@ -46,7 +46,7 @@ namespace SparLoadingDocks
 
                 Console.WriteLine("{0} ", LoadName);
             }
-        }
+        }      
     }
 }
 

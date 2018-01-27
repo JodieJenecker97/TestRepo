@@ -286,5 +286,10 @@ namespace SparLoadingDocks
             }
             return BL;
         }
+        
+        public void RevoveLoadFromBay()
+        {
+            ListOfBays.RemoveLoad();
+        }
     }
 }
